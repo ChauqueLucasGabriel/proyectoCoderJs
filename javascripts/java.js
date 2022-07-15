@@ -29,10 +29,35 @@ for (let i = 1; i <= 10; i++){
     console.log("Turno N° " + i + " Nombre y Apellido:" + ingresarNombre + " " + ingresarApellido)
 }
 */
-
-for( let i = 1 ; i <= 5 ; i++){
+/*
+//intentando hacer un conversor de divisas
+//con falsa alerta de segruridad
+for( let i = 0 ; i <= 5 ; i++){
     let usuario = prompt("ingrese usuario");
     let conversion = prompt("ingrese USD a cambiar por ARS");
     let total =  usuario + " su total de pesos arg es "+( conversion * 285 )+"$";
     console.log(total)
+    if (i == 2){
+        console.log("Parada de seguridad " + (i+1) +" para el usuario" )
+        break;
+    }
+}
+*/
+let user =prompt("Ingresar User")
+let password =prompt("Ingresar Password")
+while (user != "ESC"){
+    switch (user){
+        case "Lucas":
+        alert ("Bienvenido Lucas");
+        break;
+
+        case "Pablo":
+        alert ("Bienvenido Pablo");
+        break;
+
+        default:
+        alert("¿Quien sos?");
+        break;
+    }
+    user = prompt("Ingresar un nombre de usuario")
 }
