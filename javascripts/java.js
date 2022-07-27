@@ -63,6 +63,7 @@ while (user != "ESC"){
     user = prompt("Ingresar un nombre de usuario")
 }
 */
+/*
 let precioMonitor = 5500;
 let precioTeclado = 3500;
 let precioMouse = 1550;
@@ -112,3 +113,35 @@ if (total > 0){
         alert("Puede pasar a retirar su pedido por nuestra sucursal, su total es $"+total)
     }
 }
+*/
+
+const precio=[5500,3500,1550,1330,3755];
+function precios(array){
+    let largoArray=array.length
+    let resultado= 0;
+    for(let i = 0 ;i<largoArray;i++){
+        console.log(array[i])
+    }
+}
+const producto = ["monitor","teclado","mouse","audifonos","gabinete"];
+function productos(array) {
+    let largoArray=array.length;
+    let resultado = 0;
+    for(let i = 0 ;i<largoArray; i++){
+        console.log(array[i]);
+    }
+}
+let resultado1= producto[0] +" " + precio[0];
+let resultado2= producto[1] +" " + precio[1];
+let resultado3= producto[2] +" " + precio[2];
+let resultado4= producto[3] +" " + precio[3];
+let resultado5= producto[4] +" " + precio[4];
+
+productos(producto)
+precios(precio)
+console.log(producto,precio)
+console.log(resultado1)
+console.log(resultado2)
+console.log(resultado3)
+console.log(resultado4)
+console.log(resultado5)
