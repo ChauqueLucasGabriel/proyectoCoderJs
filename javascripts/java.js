@@ -145,3 +145,48 @@ console.log(resultado2)
 console.log(resultado3)
 console.log(resultado4)
 console.log(resultado5)
+
+let envio = 2500;
+let total = 0;
+
+const addTotal = (productos) => total += productos;
+const descuento = x =>(x-(x*20)/100);
+
+
+let comprar = prompt("Ingresar producto a comprar").toLowerCase();
+    while(comprar != "salir"){
+        switch(comprar){
+            case "monitor":
+                addTotal(producto[0]);
+                break;
+            case "teclado":
+                    addTotal(producto[1]);
+                    break;
+            case "mouse":
+                    addTotal(producto[2]);
+                    break;
+            case"audifonos":
+                    addTotal(producto[3]);
+                    break;
+            case"gabinete":
+                    addTotal(producto[4]);
+                    break;
+            default:
+                    alert("Ingrese, un producto valido");
+                    break;
+        }
+        comprar=prompt("¿Desea seguir comprando? Para finalizar la compra escriba 'salir', para continuar elija otro producto")
+    }
+
+if ( total > 0){
+        let finish = prompt("el total de su compra es $" +total + "¿quiere agregar envio?");
+    
+    if(finish == "si" ){
+        addTotal(envio);
+        alert("Por su primer compra tiene un cupón de descuento");
+        alert("Su precio final es de $"+descuento(total)+" ,gracias por elegirnos! Su envio estará llegando en 7 dias");
+    }
+    else{
+        alert("Puede pasar a retirar su pedido por nuestra sucursal, su total es $"+total);
+    }
+}
