@@ -114,7 +114,7 @@ if (total > 0){
     }
 }
 */
-
+/*
 const precio=[5500,3500,1550,1330,3755];
 function precios(array){
     let largoArray=array.length
@@ -189,4 +189,15 @@ if ( total > 0){
     else{
         alert("Puede pasar a retirar su pedido por nuestra sucursal, su total es $"+total);
     }
+}
+*/
+let cambioTitulo = document.getElementById("titulo")
+console.log(cambioTitulo)
+
+let paises = document.getElementsByClassName("paises");
+console.log(paises);
+
+for(const pais of paises){
+    console.log(pais.innerHTML);
+    pais.innerText ="cambiando nombre"
 }
