@@ -191,6 +191,7 @@ if ( total > 0){
     }
 }
 */
+/*
 let cambioTitulo = document.getElementById("titulo")
 console.log(cambioTitulo)
 
@@ -200,4 +201,21 @@ console.log(paises);
 for(const pais of paises){
     console.log(pais.innerHTML);
     pais.innerText ="cambiando nombre"
+}
+*/
+
+let contadorValor = 0;
+
+function incrementarClicks(){
+    updateDisplay(++contadorValor);
+}
+function reiniciarClicks(){
+    contadorValor=0
+    updateDisplay(contadorValor);
+}
+function disminuirClicks(){
+    updateDisplay(--contadorValor);
+}
+function updateDisplay(val){
+    document.getElementById("contador").innerHTML=val
 }
