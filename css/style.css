@@ -6,84 +6,64 @@
 html{
     font-size: 62.5%;
 }
-body{
-    background: #9cbbcf;
+
+h1{
+    text-align: center;
+    font-size: 4rem;
+    margin-top: 2rem;
+
+}
+h2{
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 2rem;
 }
 
-.counter__style{
-    margin-top: 7rem;
-    background: #9cbbcf;
+.container{
+    margin-top: 2rem;
     width: 100%;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
+    height: 40%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
 }
-.titulo{
-    justify-content: center;
-    margin: 4rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    font-size: 3rem;
+.center{
+    text-align: center;
+    font-size: 2rem;
 }
-#contador{
-    justify-content: center;
-    margin:4rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    font-family:'DS-Digital';
-    font-size: 4rem;
+
+img{
+    width: auto;
+    height: 50%;
 }
-.botones{
-    justify-content: center;
-    margin: 4rem;
+
+p{
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
 }
 
 button {
-    height: 3em;
-    width: 8em;
+    position: relative;
+    padding: 10px 40px;
+    margin: 0px 10px 10px 0px;
+    float: left;
+    border-radius: 3px;
+    font-size: 20px;
+    color: #FFF;
+    text-decoration: none;
+    background-color: #2ecc71;
     border: none;
-    border-radius: 10em;
-    background: #016DD9;
-    font-size: 17px;
-    color: #ffffff;
-    font-family: inherit;
-    font-weight: 500;
+    border-bottom: 5px solid #27ae60;
+    text-shadow: 0px -2px #27ae60;
+    -webkit-transition: all 0.1s;
+    transition: all 0.1s;
    }
    
-   button:hover {
-    animation: shake3856 0.3s linear infinite both;
-   }
-   
-   @keyframes shake3856 {
-    0% {
-     -webkit-transform: translate(0);
-     transform: translate(0);
-    }
-   
-    20% {
-     -webkit-transform: translate(-2px, 2px);
-     transform: translate(-2px, 2px);
-    }
-   
-    40% {
-     -webkit-transform: translate(-2px, -2px);
-     transform: translate(-2px, -2px);
-    }
-   
-    60% {
-     -webkit-transform: translate(2px, 2px);
-     transform: translate(2px, 2px);
-    }
-   
-    80% {
-     -webkit-transform: translate(2px, -2px);
-     transform: translate(2px, -2px);
-    }
-   
-    100% {
-     -webkit-transform: translate(0);
-     transform: translate(0);
-    }
+   button:hover, button:active {
+    -webkit-transform: translate(0px,5px);
+    -ms-transform: translate(0px,5px);
+    transform: translate(0px,5px);
+    border-bottom: 1px solid #2ecc71;
    }

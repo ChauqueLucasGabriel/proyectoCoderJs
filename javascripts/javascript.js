@@ -1,68 +1,3 @@
-/*let nombre = "lucas "
-let apellido = "chauque "
-let edad = 19
-
-if (nombre == "lucas ")
-console.log("mi nombre es " + nombre + apellido + "y mi edad es " + edad + " años") 
-*/
-
-//conversor de dolar a pesos arg
-/*let conversion = prompt("ingrese USD a cambiar por ARS");
-let total = "su total de dolres es " + conversion * 285;
-alert (total)
-*/
-
-/*
-for (let i = 0; i < 10; i++){
-    console.log(i+0);
-}
-*/
-//calculadora
-/*
-let ingresarNumero = parseInt(prompt("Ingresar Numero"));
-for (let i = 1; i <= 10; i++){
-    let resultado = ingresarNumero * i;
-    console.log(ingresarNumero +" X "+ i +" = "+ resultado)
-}*/
-/*for(let i = 1 ; i <= 5 ; i++){
-    let ingresarNombre = prompt("Ingresar Nombre");
-    console.log("Turno N° " + i + " Nombre y Apellido:" + ingresarNombre + " " + ingresarApellido)
-}
-*/
-/*
-//intentando hacer un conversor de divisas
-//con falsa alerta de segruridad
-for( let i = 0 ; i <= 5 ; i++){
-    let usuario = prompt("ingrese usuario");
-    let conversion = prompt("ingrese USD a cambiar por ARS");
-    let total =  usuario + " su total de pesos arg es "+( conversion * 285 )+"$";
-    console.log(total)
-    if (i == 2){
-        console.log("Parada de seguridad " + (i+1) +" para el usuario" )
-        break;
-    }
-}
-*/
-/*
-let user =prompt("Ingresar User")
-let password =prompt("Ingresar Password")
-while (user != "ESC"){
-    switch (user){
-        case "Lucas":
-        alert ("Bienvenido Lucas");
-        break;
-
-        case "Pablo":
-        alert ("Bienvenido Pablo");
-        break;
-
-        default:
-        alert("¿Quien sos?");
-        break;
-    }
-    user = prompt("Ingresar un nombre de usuario")
-}
-*/
 /*
 let precioMonitor = 5500;
 let precioTeclado = 3500;
@@ -100,9 +35,8 @@ let comprar = prompt("Ingresar producto a comprar").toLowerCase();
         }
         comprar=prompt("¿Desea seguir comprando? Para finalizar la compra escriba 'salir', para continuar elija otro producto.")
     }
-
 if (total > 0){
-    let finish = prompt("El total de su compra es $" +total +" ¿quiere agregar envio?");
+    let finish = prompt("El total de su compra es $" +total +" ¿quiere agregar envio?");    
     
     if(finish == "si"){
         addTotal(envio);
@@ -192,30 +126,64 @@ if ( total > 0){
 }
 */
 /*
-let cambioTitulo = document.getElementById("titulo")
-console.log(cambioTitulo)
-
-let paises = document.getElementsByClassName("paises");
-console.log(paises);
-
-for(const pais of paises){
-    console.log(pais.innerHTML);
-    pais.innerText ="cambiando nombre"
+const producto = ["monitor","teclado","mouse","audifonos","gabinete"];
+function productos(array) {
+    //let largoArray=array.length;
+    let resultado = 0;
+    for(let i = 0 ;i<largoArray; i++){
+        console.log(array[i]);
+    }
 }
 */
+const precioProducto = [
+    {id:0,
+    producto:"monitor",
+    precio: 5500
+},{
+    id:1,
+    producto:"teclado",
+    precio:3500
+},{
+    id:2,
+    producto:"mouse",
+    precio:1550
+},{
+    id:3,
+    producto:"audifonos",
+    precio:1330
+},{
+    id:4,
+    producto:"gabinete",
+    precio:3995
+}];
 
-let contadorValor = 0;
+const addTotal = (item) => total +=item;
 
-function incrementarClicks(){
-    updateDisplay(++contadorValor);
+const precios =precioProducto.map((el) => el.precio);
+console.log(precios)
+console.log(addTotal)
+
+const producto1 = precios[0];
+const producto2 = precios[1];
+const producto3 = precios[2];
+const producto4 = precios[3];
+const producto5 = precios[4];
+const misPrecios =JSON.stringify(precios)
+const misCompras = JSON.stringify(misCompras)
+
+localStorage.setItem("miProducto",misPrecios);
+localStorage.setItem("miCompra",miJson)
+
+const miCompra =[];
+
+let comprar = document.getElementById("btn-1");
+let boton_1 =document.getElementById("btn-1")
+boton_1.addEventListener("click",respuestaClick);
+function respuestaClick(){
+    console.log("click")
+    //if (respuestaClick.apply(null,[miCompra]));
 }
-function reiniciarClicks(){
-    contadorValor=0
-    updateDisplay(contadorValor);
-}
-function disminuirClicks(){
-    updateDisplay(--contadorValor);
-}
-function updateDisplay(val){
-    document.getElementById("contador").innerHTML=val
-}
+
+const total=miCompra.reduce((acc,el)=> acc +el.precio,0)
+console.log(total)
+console.log(document.getElementById("btn-1"))
