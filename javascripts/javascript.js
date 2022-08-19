@@ -135,55 +135,110 @@ function productos(array) {
     }
 }
 */
-const precioProducto = [
-    {id:0,
+
+let tienda = document.getElementById("tienda");
+
+let miCarrito = document.getElementById("miCarrito");
+
+let verCarrito = document.getElementById("verCarrito");
+
+let cerrarCarrito = document.getElementById("cerrarCarrito");
+
+let verTotal = document.getElementById("verTotal");
+verTotal.style.display ="block";
+
+let totalContenido = document.getElementById("totalContenido");
+
+let carrito =[];
+
+const productos = [
+    {
     producto:"monitor",
-    precio: 5500
+    precio: 5500,
+    img:
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzspdZYxUOzkPhyNXfSFRNGYq5ZJ8rHMD9Xg&usqp=CAU"
 },{
-    id:1,
     producto:"teclado",
-    precio:3500
+    precio:3500,
+    img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3TKy8rU4atJSm2ykEp7PgSlwOexEVKWCv2w&usqp=CAU"
 },{
-    id:2,
     producto:"mouse",
-    precio:1550
+    precio:1550,
+    img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQt8tpmO8wzUxHV_Xb4HWTXR0ztAfK0Dv2OWw&usqp=CAU"
 },{
-    id:3,
     producto:"audifonos",
-    precio:1330
+    precio:1330,
+    img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqMfjU0SABGjqC-42elKc25ei6hjM9e-5PIQ&usqp=CAU"
 },{
-    id:4,
     producto:"gabinete",
-    precio:3995
+    precio:3995,
+    img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIL3jBmFLKU6cpdRtUrzmw68QPrhZ2_QCaIw&usqp=CAU"
 }];
 
-const addTotal = (item) => total +=item;
+productos.forEach((producto) =>{
+    let contenido = document.createElement("div");
+    contenido.innerHTML = `
+    <img src="${producto.img}">
+    <h3>${producto.producto}</h3>
+    <h3>$${producto.precio}</h3>
+    `;
+    tienda.append(contenido);
 
-const precios =precioProducto.map((el) => el.precio);
-console.log(precios)
-console.log(addTotal)
+    let comprar = document.createElement("button");
 
-const producto1 = precios[0];
-const producto2 = precios[1];
-const producto3 = precios[2];
-const producto4 = precios[3];
-const producto5 = precios[4];
-const misPrecios =JSON.stringify(precios)
-const misCompras = JSON.stringify(misCompras)
+    comprar.className ="comprar";
+    comprar.innerText ="comprar";
 
-localStorage.setItem("miProducto",misPrecios);
-localStorage.setItem("miCompra",miJson)
+    contenido.appendChild(comprar);
 
-const miCompra =[];
+    comprar.addEventListener("click",() =>{
+        carrito.push({
+            producto:producto.producto,
+            precio:producto.precio,
+            img: producto.img,
+        })
+        console.log(carrito)
+    })
 
-let comprar = document.getElementById("btn-1");
-let boton_1 =document.getElementById("btn-1")
-boton_1.addEventListener("click",respuestaClick);
-function respuestaClick(){
-    console.log("click")
-    //if (respuestaClick.apply(null,[miCompra]));
-}
+   })
 
-const total=miCompra.reduce((acc,el)=> acc +el.precio,0)
-console.log(total)
-console.log(document.getElementById("btn-1"))
+verCarrito.addEventListener("click",()=>{
+    verTotal.style.display ="block";
+    miCarrito.style.display = "block";
+    miCarrito.innerHTML = "";
+    carrito.forEach((producto)=>{
+        let contenidoCarrito = document.createElement("div");
+        contenidoCarrito.className = "contenidoCarrito";
+
+        contenidoCarrito.innerHTML=`
+        <img src="${producto.img}">
+        <h3>${producto.producto}</h3>
+        <h3>$${producto.precio}</h3>
+        `;
+
+        miCarrito.append(contenidoCarrito);
+    })
+})
+
+cerrarCarrito.addEventListener("click",()=>{
+    verTotal.style.display ="none";
+    miCarrito.style.display ="none";
+    totalContenido.style.display ="none";
+})
+
+verTotal.addEventListener("click",()=>{
+    totalContenido.innerHTML = "";
+    const total = carrito.reduce((acc,el)=>acc + el.precio,0);
+    let totalContenidoElement = document.createElement("h2");
+    totalContenidoElement.innerHTML = Swal.fire({
+        title: 'Su total es $',
+        showClass: {
+        popup: 'animate__animated animate__fadeInDown'
+    },
+        hideClass: {
+        popup: 'animate__animated animate__fadeOutUp'
+  }
+
+    }) ;
+    totalContenido.append(totalContenidoElement);
+});
