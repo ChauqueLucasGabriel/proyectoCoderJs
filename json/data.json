@@ -1,0 +1,23 @@
+[
+    {
+    "producto":"monitor",
+    "precio": 5500,
+    "img":
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzspdZYxUOzkPhyNXfSFRNGYq5ZJ8rHMD9Xg&usqp=CAU"
+},{
+    "producto":"teclado",
+    "precio":3500,
+    "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3TKy8rU4atJSm2ykEp7PgSlwOexEVKWCv2w&usqp=CAU"
+},{
+    "producto":"mouse",
+    "precio":1550,
+    "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQt8tpmO8wzUxHV_Xb4HWTXR0ztAfK0Dv2OWw&usqp=CAU"
+},{
+    "producto":"audifonos",
+    "precio":1330,
+    "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqMfjU0SABGjqC-42elKc25ei6hjM9e-5PIQ&usqp=CAU"
+},{
+    "producto":"gabinete",
+    "precio":3995,
+    "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIL3jBmFLKU6cpdRtUrzmw68QPrhZ2_QCaIw&usqp=CAU"
+}]
