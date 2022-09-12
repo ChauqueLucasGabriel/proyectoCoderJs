@@ -5,6 +5,7 @@
 }
 html{
     font-size: 62.5%;
+    font-family: 'Poppins', sans-serif;
 }
 
 h1{
@@ -24,8 +25,6 @@ h2{
     justify-content: space-around;
     flex-direction: row;
 }
-
-
 
 img{
     width: auto;
